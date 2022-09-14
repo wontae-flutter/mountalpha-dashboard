@@ -32,7 +32,7 @@ class _IndexScreenState extends State<IndexScreen> {
               NavigationRailDestination(
                   icon: Icon(IconData(0xe042, fontFamily: 'MaterialIcons')),
                   // on 0xe3f7
-                  label: Text("Tmp1")),
+                  label: Text("Exchanges")),
               NavigationRailDestination(
                   icon: Icon(IconData(0xe74a, fontFamily: 'MaterialIcons')),
                   // on 0xe3f7
