@@ -1,7 +1,8 @@
 import "package:flutter/material.dart";
-import 'package:dashboard/contents/content_balance.dart';
-import 'package:dashboard/contents/content_tmp1.dart';
-import 'package:dashboard/contents/content_tmp2.dart';
+import 'package:dashboard/tabs/tab_balance.dart';
+import 'package:dashboard/tabs/tab_strategy.dart';
+import 'package:dashboard/tabs/tab_tmp1.dart';
+import 'package:dashboard/tabs/tab_tmp2.dart';
 
 class IndexScreen extends StatefulWidget {
   const IndexScreen({super.key});
@@ -13,6 +14,7 @@ class IndexScreen extends StatefulWidget {
 class _IndexScreenState extends State<IndexScreen> {
   int _currentIndex = 0;
   final List<Widget> _mainContents = [
+    StrategyTab(),
     BalanceContent(),
     Tmp1Content(),
     Tmp2Content()
@@ -26,13 +28,17 @@ class _IndexScreenState extends State<IndexScreen> {
           NavigationRail(
             destinations: const <NavigationRailDestination>[
               NavigationRailDestination(
+                  icon: Icon(IconData(0xf06f7, fontFamily: 'MaterialIcons')),
+                  // on 0xe3f7
+                  label: Text("Strategies")),
+              NavigationRailDestination(
                   icon: Icon(IconData(0xf1dd, fontFamily: 'MaterialIcons')),
                   // on 0xe3f7
                   label: Text("Balance")),
               NavigationRailDestination(
                   icon: Icon(IconData(0xe042, fontFamily: 'MaterialIcons')),
                   // on 0xe3f7
-                  label: Text("Exchanges")),
+                  label: Text("Tmp1")),
               NavigationRailDestination(
                   icon: Icon(IconData(0xe74a, fontFamily: 'MaterialIcons')),
                   // on 0xe3f7
@@ -46,7 +52,6 @@ class _IndexScreenState extends State<IndexScreen> {
             },
             labelType: NavigationRailLabelType.all,
             elevation: 5,
-            indicatorColor: Colors.cyan[50],
           ),
           const VerticalDivider(
             thickness: 5,
